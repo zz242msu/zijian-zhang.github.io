@@ -1,85 +1,108 @@
+/* Body and overall background */
 body {
-    background-color: #1A1A1D;
-    color: #EAEAEA;
+    background-color: #FDF6E3; /* Light beige/cream background */
+    color: #2F4F4F; /* Dark slate grey for readable text */
     font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
+/* Links */
 a {
-    color: #00D1FF;
+    color: #0077B6; /* Muted blue for links */
+    text-decoration: none;
 }
 
 a:hover {
-    color: #00A3D1;
+    color: #00A8E8; /* Brighter blue for hover effect */
 }
 
+/* Header section */
 .header {
-    background-color: #121212;
-    color: #EAEAEA;
+    background-color: #FDF6E3; /* White background for header */
+    color: #0077B6; /* Muted blue for header text */
     padding: 2rem;
+    border-bottom: 2px solid #00A8E8; /* Light blue line under header */
 }
 
-.docs-section {
-    background-color: #1A1A1D;
-    border-top: 1px solid #00D1FF;
-    padding: 3rem;
-}
-
-h1, h2, h3 {
-    color: #00D1FF;
-}
-
+/* Navbar */
 .navbar {
-    display: flex;
-    justify-content: center; /* This will center the navigation bar */
-    align-items: center;
-    background-color: #121212;
-    border-bottom: 1px solid #00D1FF;
+    background-color: #FDF6E3; /* White background for navbar */
+    border-bottom: 2px solid #0077B6; /* Muted blue border under navbar */
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 99;
-    padding: 0;
 }
 
 .navbar-list {
     list-style: none;
     display: flex;
+    justify-content: center; /* Center navigation items */
     padding: 0;
     margin: 0;
 }
 
 .navbar-item {
-    margin: 0 15px; /* Adjust the space between each nav item */
+    margin: 0 20px;
 }
 
 .navbar-link {
     text-transform: uppercase;
     font-size: 14px;
     font-weight: bold;
-    color: #00D1FF;
+    color: #0077B6;
     padding: 1rem 2rem;
-    text-decoration: none;
-    display: block; /* Ensure the link takes up the full space */
 }
 
 .navbar-link:hover {
-    color: #00A3D1;
+    color: #00A8E8;
 }
 
+/* Section headers */
+.docs-header {
+    color: #0077B6; /* Muted blue for section headings */
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Content sections */
+.docs-section {
+    background-color: #FDF6E3; /* White background for content */
+    border-top: 2px solid #E1E1E1; /* Light grey line above sections */
+    padding: 3rem;
+}
+
+/* Profile image */
 .value-img {
     display: block;
     margin: 0 auto;
     border-radius: 50%;
-    border: 3px solid #00D1FF;
+    border: 3px solid #0077B6; /* Blue border around profile image */
 }
 
-.value-prop {
-    margin-top: 2rem;
+/* Buttons */
+.button, .button-primary {
+    background-color: #00A8E8; /* Bright blue for buttons */
+    color: #FDF6E3;
+    padding: 10px 20px;
+    border-radius: 4px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
 }
 
-.docs-header {
-    color: #00D1FF;
-    font-size: 1.8rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1rem;
+.button:hover, .button-primary:hover {
+    background-color: #0077B6; /* Darker blue on hover */
+}
+
+/* Footer */
+footer {
+    background-color: #FDF6E3; /* Same beige as body background */
+    color: #2F4F4F;
+    text-align: center;
+    padding: 1rem;
+    border-top: 2px solid #00A8E8;
 }
