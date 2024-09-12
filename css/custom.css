@@ -29,22 +29,27 @@ h1, h2, h3 {
 }
 
 .navbar {
+    display: flex;
+    justify-content: center; /* This will center the navigation bar */
+    align-items: center;
     background-color: #121212;
     border-bottom: 1px solid #00D1FF;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 99;
+    padding: 0;
 }
 
 .navbar-list {
     list-style: none;
     display: flex;
-    justify-content: space-around;
+    padding: 0;
+    margin: 0;
 }
 
 .navbar-item {
-    margin: 0;
+    margin: 0 15px; /* Adjust the space between each nav item */
 }
 
 .navbar-link {
@@ -54,6 +59,7 @@ h1, h2, h3 {
     color: #00D1FF;
     padding: 1rem 2rem;
     text-decoration: none;
+    display: block; /* Ensure the link takes up the full space */
 }
 
 .navbar-link:hover {
