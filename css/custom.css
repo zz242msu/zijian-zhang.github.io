@@ -1,78 +1,134 @@
 /* Body and overall background */
 body {
-    background-color: #FDF6E3; /* Light beige/cream background */
-    color: #2F4F4F; /* Dark slate grey for readable text */
-    font-family: Arial, sans-serif;
+    background-color: #FDF6E3;
+    color: #333;
+    font-family: 'Roboto', Arial, sans-serif;
+    line-height: 1.6;
     margin: 0;
     padding: 0;
 }
 
 /* Links */
 a {
-    color: #0077B6; /* Muted blue for links */
+    color: #007bff;
     text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 a:hover {
-    color: #00A8E8; /* Brighter blue for hover effect */
+    color: #0056b3;
 }
 
 /* Header section */
 .header {
-    background-color: #FDF6E3; /* White background for header */
-    color: #0077B6; /* Muted blue for header text */
-    padding: 2rem;
-    border-bottom: 2px solid #00A8E8; /* Light blue line under header */
+    background-color: #FDF6E3;
+    color: #333;
+    padding: 3rem 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.header .row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header .columns {
+    float: none;
+    width: 100%;
+    margin-left: 0;
+}
+
+.header .value-img {
+    margin-bottom: 2rem;
+}
+
+.header h2.docs-header {
+    margin-bottom: 1rem;
+}
+
+.header p {
+    margin-bottom: 0;
 }
 
 /* Navbar */
 .navbar {
-    background-color: #FDF6E3; /* White background for navbar */
-    border-bottom: 2px solid #0077B6; /* Muted blue border under navbar */
+    background-color: #FDF6E3;
+    border-bottom: 1px solid #e9ecef;
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 99;
+    z-index: 1000;
+    transition: all 0.3s ease;
 }
 
 .navbar-list {
     list-style: none;
     display: flex;
-    justify-content: center; /* Center navigation items */
+    justify-content: center;
     padding: 0;
     margin: 0;
 }
 
 .navbar-item {
-    margin: 0 20px;
+    margin: 0 15px;
 }
 
 .navbar-link {
     text-transform: uppercase;
     font-size: 14px;
-    font-weight: bold;
-    color: #0077B6;
-    padding: 1rem 2rem;
+    font-weight: 500;
+    color: #333;
+    padding: 1rem 0;
+    position: relative;
 }
 
-.navbar-link:hover {
-    color: #00A8E8;
+.navbar-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #007bff;
+    transition: width 0.3s ease;
+}
+
+.navbar-link:hover::after {
+    width: 100%;
 }
 
 /* Section headers */
 .docs-header {
-    color: #0077B6; /* Muted blue for section headings */
-    font-size: 1.8rem;
+    color: #007bff;
+    font-size: 2.2rem;
+    font-weight: 300;
     text-transform: uppercase;
     letter-spacing: 0.1rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.docs-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 2px;
+    background-color: #007bff;
 }
 
 /* Content sections */
 .docs-section {
-    background-color: #FDF6E3; /* White background for content */
-    border-top: 2px solid #E1E1E1; /* Light grey line above sections */
+    background-color: #FDF6E3;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     padding: 3rem;
+    margin-bottom: 3rem;
 }
 
 /* Profile image */
@@ -80,29 +136,67 @@ a:hover {
     display: block;
     margin: 0 auto;
     border-radius: 50%;
-    border: 3px solid #0077B6; /* Blue border around profile image */
+    border: 3px solid #007bff;
+    transition: transform 0.3s ease;
+}
+
+.value-img:hover {
+    transform: scale(1.05);
 }
 
 /* Buttons */
 .button, .button-primary {
-    background-color: #00A8E8; /* Bright blue for buttons */
+    background-color: #007bff;
     color: #FDF6E3;
     padding: 10px 20px;
     border-radius: 4px;
     border: none;
-    font-weight: bold;
+    font-weight: 500;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 .button:hover, .button-primary:hover {
-    background-color: #0077B6; /* Darker blue on hover */
+    background-color: #0056b3;
 }
 
 /* Footer */
 footer {
-    background-color: #FDF6E3; /* Same beige as body background */
-    color: #2F4F4F;
+    background-color: #FDF6E3;
+    color: #6c757d;
     text-align: center;
+    padding: 2rem 0;
+    border-top: 1px solid #e9ecef;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-in;
+}
+
+/* Alert */
+.alert {
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    color: #155724;
     padding: 1rem;
-    border-top: 2px solid #00A8E8;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .navbar-list {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .navbar-item {
+        margin: 10px 0;
+    }
 }
